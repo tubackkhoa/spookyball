@@ -1,29 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html>
   <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'>
-    <meta name='mobile-web-app-capable' content='yes'>
-    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <!-- Valid until Mar 9, 2023-->
-    <meta http-equiv="origin-trial" content="AiDqr6y4dhADGItxLJMVxiJP+NdMBMBldvWSuyCJMg4WL70Sme7PDrFppJjFOYQHoC554IVTkXcdHe2zM24OgAUAAABOeyJvcmlnaW4iOiJodHRwczovL3Nwb29reWJhbGwuY29tOjQ0MyIsImZlYXR1cmUiOiJXZWJHUFUiLCJleHBpcnkiOjE2OTE3MTE5OTl9">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet" />
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel='icon' type='image/png' sizes='32x32' href='media/images/icon-32.png'>
-    <link rel='icon' type='image/png' sizes='96x96' href='media/images/icon-96.png'>
+    <link rel="icon" type="image/png" sizes="32x32" href="media/images/icon-32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="media/images/icon-96.png" />
 
     <script defer src="https://web3dsurvey.com/collector.js"></script>
 
     <title>SpookyBall!</title>
 
     <style>
-      html, body {
+      html,
+      body {
         display: flex;
         height: 100%;
         width: 100%;
@@ -62,10 +60,11 @@
       @media (max-aspect-ratio: 3/4) {
         .container {
           width: 100%;
-          aspect-ratio: 3/4
+          aspect-ratio: 3/4;
         }
 
-        #left-banner, #right-banner {
+        #left-banner,
+        #right-banner {
           display: none;
         }
       }
@@ -76,7 +75,8 @@
           width: 100%;
         }
 
-        #left-banner, #right-banner {
+        #left-banner,
+        #right-banner {
           display: none;
         }
       }
@@ -84,7 +84,7 @@
       @media (min-aspect-ratio: 7/8) {
         .container {
           height: 100%;
-          aspect-ratio: 7/8
+          aspect-ratio: 7/8;
         }
       }
 
@@ -127,7 +127,7 @@
         text-align: center;
         font-size: 2em;
         font-family: 'Creepster', cursive;
-        color: #FFFFFF;
+        color: #ffffff;
         white-space: nowrap;
       }
 
@@ -151,8 +151,8 @@
       }
 
       #level-title.show {
-        opacity: 1.0;
-        transform: translate(-50%, 0) scale(1.0);
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
       }
 
       #replay-button {
@@ -173,7 +173,7 @@
         padding: 0.25em;
 
         display: none;
-        transform: translate(-50%, 0) scale(1.0);
+        transform: translate(-50%, 0) scale(1);
       }
 
       #replay-button:hover {
@@ -193,7 +193,7 @@
         width: 100%;
         font-size: 2em;
         font-family: 'Creepster', cursive;
-        color: #FFFFFF;
+        color: #ffffff;
         pointer-events: none;
       }
 
@@ -202,14 +202,11 @@
         z-index: 10;
         top: 10px;
         right: 10px;
-        font: 1rem/1.4 -apple-system, BlinkMacSystemFont,
-        Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans,
-        Droid Sans, Helvetica Neue, sans-serif;
+        font: 1rem/1.4 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
       }
 
       footer a {
-        color: #FFFFFF;
+        color: #ffffff;
         text-decoration: none;
       }
 
@@ -217,7 +214,7 @@
         text-decoration: underline;
       }
 
-      #left
+      #left;
     </style>
   </head>
   <body>
@@ -232,23 +229,22 @@
     <div id="right-banner"></div>
 
     <footer>
-      <a href="https://github.com/toji/spookyball">SpookyBall is open source!</a>
+      <a href="https://orai.io" style="margin: 20px"><img src="https://orai.io/images/logos/logo-full-h-dark.svg" /></a>
     </footer>
 
-
     <script type="importmap">
-    {
+      {
         "imports": {
-            "gl-matrix": "./node_modules/gl-matrix/esm/index.js",
-            "webgpu-texture-loader": "./node_modules/web-texture-tool/build/webgpu-texture-loader.js",
-            "wgsl-preprocessor": "./node_modules/wgsl-preprocessor/wgsl-preprocessor.js",
-            "dat.gui": "./node_modules/dat.gui/build/dat.gui.module.js",
-            "stats.js": "./node_modules/stats.js/src/Stats.js"
+          "gl-matrix": "./js/libs/gl-matrix/index.js",
+          "webgpu-texture-loader": "./js/libs/web-texture-tool/webgpu-texture-loader.js",
+          "wgsl-preprocessor": "./js/libs/wgsl-preprocessor/wgsl-preprocessor.js",
+          "dat.gui": "./js/libs/dat.gui/dat.gui.module.js",
+          "stats.js": "./js/libs/stats.js/Stats.js"
         }
-    }
+      }
     </script>
 
-    <script src='./node_modules/matter-js/build/matter.js'></script>
-    <script type="module" src='./js/spookyball.js'></script>
+    <script src="./js/libs/matter.js"></script>
+    <script type="module" src="./js/spookyball.js"></script>
   </body>
 </html>
